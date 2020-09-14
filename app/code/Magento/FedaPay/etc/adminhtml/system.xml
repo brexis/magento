@@ -1,0 +1,59 @@
+<?xml version="1.0" ?>
+<!--
+/**
+ *  Magento_FedaPay admin configuration
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <section id="payment">
+            <group id="fedapay_payment" sortOrder="53" translate="label" showInDefault="1" showInWebsite="1" showInStore="1" type="text">
+                <label>
+                   <![CDATA[<div class="fedapay-payment-logo"></div>
+                   <div class="fedapay-payment-byline">Accept mobile money and credit card payment in your Magento store.<br/>
+                   No setup or monthly fees and no coding required.<br/>
+                   <a href="https://www.fedapay.com/" target="_blank">Click here to sign up for FedaPay account</a></div>]]>
+                </label>
+                <fieldset_css>complex fedapay-payment-section</fieldset_css>
+                <frontend_model>Magento\Paypal\Block\Adminhtml\System\Config\Fieldset\Payment</frontend_model>
+                <attribute type="activity_path">payment/fedapay/active</attribute>
+                <attribute type="displayIn">recommended_solutions</attribute>
+                <field id="title" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Title</label>
+                    <config_path>payment/fedapay/title</config_path>
+                </field>
+                <field id="active" translate="label" type="select" sortOrder="2" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Enable FedaPay Gateway</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <config_path>payment/fedapay/active</config_path>
+                 </field>
+                <field id="environment" translate="label" type="select" sortOrder="3" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Environment</label>
+                    <source_model>Magento\FedaPay\Model\Adminhtml\Source\Environment</source_model>
+                    <config_path>payment/fedapay/environment</config_path>
+                </field>
+                <field id="payment_action" translate="label" type="select" sortOrder="4" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Payment Action</label>
+                    <source_model>Magento\FedaPay\Model\Adminhtml\Source\PaymentAction</source_model>
+                    <config_path>payment/fedapay/payment_action</config_path>
+                </field>
+                
+                <field id="test_key" translate="label" type="obscure" sortOrder="5" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Test Secret Key</label>
+                    <config_path>payment/fedapay/public_key</config_path>
+                    <backend_model>Magento\Config\Model\Config\Backend\Encrypted</backend_model>
+                </field>
+                <field id="live_key" translate="label" type="obscure" sortOrder="6" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Live Secret Key</label>
+                    <config_path>payment/fedapay/private_key</config_path>
+                    <backend_model>Magento\Config\Model\Config\Backend\Encrypted</backend_model>
+                </field>
+                <field id="sort_order" translate="label" type="text" sortOrder="230" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Sort Order</label>
+                    <frontend_class>validate-number</frontend_class>
+                    <config_path>payment/fedapay/sort_order</config_path>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

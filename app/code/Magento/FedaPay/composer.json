@@ -1,0 +1,22 @@
+{
+    "name": "magento/fedapay",
+    "description": "FedaPay integration for Magento 2.",
+    "type": "magento2-module",
+    "version": "dev-master",
+    "license": [
+        "OSL-3.0"
+    ],
+    
+    "require": {
+        "php": "~5.5.0|~5.6.0|~7.0.0",
+        "fedapay/fedapay-php": "0.3.0"
+    },
+    "extra": {
+        "map": [
+            [
+                "*",
+                "Magento/FedaPay"
+            ]
+        ]
+    }
+}

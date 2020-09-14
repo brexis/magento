@@ -1,0 +1,35 @@
+<?xml version="1.0" ?>
+<!--
+/**
+ * Magento_FedaPay extension
+ * @category  Payment Method
+ * @package   Magento_FedaPay
+ * @copyright Copyright (c) 2017-2018
+ */
+-->
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <payment>
+            <fedapay>
+                <debug>1</debug>
+                <active>0</active>
+                <model>Magento\FedaPay\Model\FedaPay</model>
+                <title>FedaPay</title>
+                <environment>sandbox</environment>
+                <payment_action>authorize</payment_action>
+                <is_gateway>1</is_gateway>
+                <currency>XOF</currency>
+                <can_authorize>1</can_authorize>
+                <can_capture>1</can_capture>
+                <can_use_checkout>1</can_use_checkout>
+                <order_status>pending</order_status>
+                <allowspecific>0</allowspecific>
+                <public_key backend_model="Magento\Config\Model\Config\Backend\Encrypted" />
+                <private_key backend_model="Magento\Config\Model\Config\Backend\Encrypted" />
+                <allowspecific>0</allowspecific>
+                <sort_order>1</sort_order>
+            </fedapay>
+        </payment>
+    </default>
+</config>
